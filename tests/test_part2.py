@@ -1,4 +1,3 @@
-from turtle import position
 from solutions.part2 import get_basement_position
 
 def test_should_handle_simplest_case():
