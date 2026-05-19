@@ -1,6 +1,12 @@
-from solutions.part2 import solution2
+from turtle import position
+from solutions.part2 import get_basement_position
 
-def test_should_do_something():
-    input = ""
-    result = solution2(input)
-    assert result == 0
+def test_should_handle_simplest_case():
+    instructions = ")"
+    position = get_basement_position(instructions)
+    assert position == 1
+
+def test_should_handle_complex_case():
+    instructions = "()())"
+    position = get_basement_position(instructions)
+    assert position == 5

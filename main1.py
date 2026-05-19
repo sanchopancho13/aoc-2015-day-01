@@ -4,7 +4,7 @@ import sys
 import logging
 import time
 
-from solutions.part1 import solution1
+from solutions.part1 import get_floor
 from util.utils import entry_point
 
 LOG = logging.getLogger(__name__)
@@ -12,18 +12,18 @@ LOG = logging.getLogger(__name__)
 @entry_point
 def main():
     # read file
-    input: str = ""
+    instructions: str = ""
     with open(sys.argv[1], "r") as file:
         for line in file:
             stripped = line.strip()
             if stripped:
-                input = stripped
+                instructions = stripped
                 break
 
     # invoke solution
-    result = solution1(input)
+    floor = get_floor(instructions)
 
-    LOG.info("Result: %s", result)
+    LOG.info("Floor: %s", floor)
 
 if __name__ == "__main__":
     main()
